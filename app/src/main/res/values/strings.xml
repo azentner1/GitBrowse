@@ -1,0 +1,4 @@
+<resources>
+    <string name="app_name">GitBrowse</string>
+    <string name="num_of_stars">Stars</string>
+</resources>

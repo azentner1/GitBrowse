@@ -1,0 +1,3 @@
+- Had login issues so i went with OAuth (i guess 2FA was giving me troubles)
+- App will fetch repos based on the query defined "ApiService" (so not the logged in user repositories)
+- TIL: GitHub API is not documented that well :(

@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="@dimen/repo_item_height"
+    android:paddingStart="@dimen/repo_item_padding"
+    android:paddingEnd="16dp"
+    android:gravity="center_vertical">
+
+    <TextView
+        android:id="@+id/txtRepoName"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="16sp"
+        android:text="Repo name"/>
+
+    <TextView
+        android:id="@+id/txtRepoStarts"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="14sp"
+        android:text="Stars"/>
+
+</LinearLayout>
