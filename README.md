@@ -1,3 +1,4 @@
-- Had login issues so i went with OAuth (i guess 2FA was giving me troubles)
-- App will fetch repos based on the query defined in "ApiService" (so not the logged in user repositories)
-- TIL: GitHub API is not documented that well :(
+- Small GitHub repository browser demo
+- Check repository and user info - limited information at the moment
+- Search repositories based on entered search query
+- Not much time or thought went into the design
