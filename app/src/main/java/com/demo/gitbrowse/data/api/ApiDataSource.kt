@@ -7,5 +7,7 @@ import com.demo.gitbrowse.data.model.GitHubToken
 
 interface ApiDataSource {
     fun fetchToken(clientId: String, clientSecret: String, code: String) : LiveData<GitHubToken>
-    fun fetchRepos(token: String) : LiveData<ReposResponse>
+
+    val fetchedRepos: LiveData<ReposResponse>
+    fun fetchRepos(token: String, query: String, sort: String, sortOrder: String)
 }

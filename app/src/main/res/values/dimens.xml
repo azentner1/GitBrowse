@@ -2,4 +2,8 @@
 <resources>
     <dimen name="repo_item_height">72dp</dimen>
     <dimen name="repo_item_padding">16dp</dimen>
+    <dimen name="image_corner_radius">8dp</dimen>
+    <dimen name="divider_margin">16dp</dimen>
+    <dimen name="details_circle">72dp</dimen>
+    <dimen name="details_circle_icon">48dp</dimen>
 </resources>

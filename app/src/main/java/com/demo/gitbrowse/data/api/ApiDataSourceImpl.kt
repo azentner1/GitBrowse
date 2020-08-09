@@ -1,12 +1,13 @@
 package com.demo.gitbrowse.data.api
 
+import androidx.lifecycle.LiveData
+import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.liveData
 import com.demo.gitbrowse.data.api.response.ReposResponse
 import com.demo.gitbrowse.data.model.GitHubToken
 import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
-import java.lang.IllegalStateException
 import kotlin.coroutines.resume
 import kotlin.coroutines.resumeWithException
 import kotlin.coroutines.suspendCoroutine
@@ -31,21 +32,25 @@ class ApiDataSourceImpl(private val apiService: ApiService) : ApiDataSource {
         })})
     }
 
-    override fun fetchRepos(token: String) = liveData {
-        emit(suspendCoroutine<ReposResponse> {
-            apiService.fetchRepos(token).enqueue(object : Callback<ReposResponse> {
+    override val fetchedRepos: LiveData<ReposResponse>
+        get() = fetchedReposTemp
+
+    private var fetchedReposTemp = MutableLiveData<ReposResponse>()
+
+    override fun fetchRepos(token: String, query: String, sort: String, sortOrder: String) {
+            apiService.fetchRepos(token, query, sort, sortOrder).enqueue(object : Callback<ReposResponse> {
             override fun onResponse(call: Call<ReposResponse>, response: Response<ReposResponse>) {
                 if (response.body() != null && response.isSuccessful) {
-                    it.resume(response.body()!!)
+                    fetchedReposTemp.postValue(response.body())
                 } else {
-                    it.resumeWithException(IllegalStateException("Response error"))
+
                 }
             }
 
             override fun onFailure(call: Call<ReposResponse>, t: Throwable) {
-                it.resumeWithException(IllegalStateException("Response error"))
+
             }
-        })})
+        })
     }
 
 }

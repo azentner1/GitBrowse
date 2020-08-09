@@ -3,8 +3,6 @@ package com.demo.gitbrowse.data.api
 import com.demo.gitbrowse.BuildConfig
 import com.demo.gitbrowse.data.api.response.ReposResponse
 import com.demo.gitbrowse.data.model.GitHubToken
-import com.demo.nearbyvenues.utils.Constants
-import com.demo.nearbyvenues.utils.SharedPrefsUtil
 import okhttp3.Interceptor
 import okhttp3.OkHttpClient
 import okhttp3.logging.HttpLoggingInterceptor
@@ -22,8 +20,8 @@ interface ApiService {
     fun getToken(@Field("client_id") clientId: String, @Field("client_secret") clientSecret: String,
                  @Field("code") code: String) : Call<GitHubToken>
 
-    @GET("https://api.github.com/search/repositories?q=stars:>=10000+language:kotlin&sort=stars&order=desc")
-    fun fetchRepos(@Query("token") token: String) : Call<ReposResponse>
+    @GET("https://api.github.com/search/repositories")
+    fun fetchRepos(@Query("token") token: String, @Query("q") query: String, @Query("sort") sort: String, @Query("order") sortOrder: String) : Call<ReposResponse>
 
     companion object {
         operator fun invoke() : ApiService {
@@ -36,11 +34,8 @@ interface ApiService {
 
             val httpLoggingInterceptor = HttpLoggingInterceptor()
 
-            if (BuildConfig.DEBUG) {
-                httpLoggingInterceptor.level = HttpLoggingInterceptor.Level.BODY
-            } else {
-                httpLoggingInterceptor.level = HttpLoggingInterceptor.Level.NONE
-            }
+            httpLoggingInterceptor.level = HttpLoggingInterceptor.Level.BODY
+
 
             val httpClient = OkHttpClient.Builder()
                 .addInterceptor(interceptor)

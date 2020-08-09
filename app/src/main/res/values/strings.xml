@@ -1,4 +1,13 @@
 <resources>
     <string name="app_name">GitBrowse</string>
-    <string name="num_of_stars">Stars</string>
+    <string name="num_of_stars">stars</string>
+    <string name="num_of_issues">issues</string>
+    <string name="num_of_forks">forks</string>
+    <string name="loading">Loading...</string>
+    <string name="search">Search...</string>
+    <string name="public_text">Public</string>
+    <string name="private_text">Private</string>
+    <string name="login">Login</string>
+    <string name="language">Language</string>
+    <string name="owner">Owner</string>
 </resources>
