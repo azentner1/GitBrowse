@@ -1,0 +1,431 @@
+<?xml version="1.0" encoding="utf-8"?>
+<MotionScene xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <Transition
+        app:autoTransition="animateToEnd"
+        app:constraintSetEnd="@+id/end"
+        app:constraintSetStart="@id/start"
+        app:duration="2000">
+
+        <KeyFrameSet>
+            <KeyAttribute
+                android:scaleX="0.0"
+                android:scaleY="0.0"
+                app:framePosition="0"
+                app:motionTarget="@+id/flDetailsStarsWrapper" />
+
+            <KeyAttribute
+                android:scaleX="1.5"
+                android:scaleY="1.5"
+                app:framePosition="30"
+                app:motionTarget="@+id/flDetailsStarsWrapper" />
+
+            <KeyAttribute
+                android:scaleX="1.0"
+                android:scaleY="1.0"
+                app:framePosition="50"
+                app:motionTarget="@+id/flDetailsStarsWrapper" />
+
+            <KeyAttribute
+                android:scaleX="0.0"
+                android:scaleY="0.0"
+                app:framePosition="0"
+                app:motionTarget="@+id/flDetailsForksWrapper" />
+
+            <KeyAttribute
+                android:scaleX="1.5"
+                android:scaleY="1.5"
+                app:framePosition="30"
+                app:motionTarget="@+id/flDetailsForksWrapper" />
+
+            <KeyAttribute
+                android:scaleX="1.0"
+                android:scaleY="1.0"
+                app:framePosition="50"
+                app:motionTarget="@+id/flDetailsForksWrapper" />
+
+            <KeyAttribute
+                android:scaleX="0.0"
+                android:scaleY="0.0"
+                app:framePosition="0"
+                app:motionTarget="@+id/flDetailsIssuesWrapper" />
+
+            <KeyAttribute
+                android:scaleX="1.5"
+                android:scaleY="1.5"
+                app:framePosition="30"
+                app:motionTarget="@+id/flDetailsIssuesWrapper" />
+
+            <KeyAttribute
+                android:scaleX="1.0"
+                android:scaleY="1.0"
+                app:framePosition="50"
+                app:motionTarget="@+id/flDetailsIssuesWrapper" />
+
+            <KeyAttribute
+                android:scaleX="15.0"
+                android:scaleY="15.0"
+                app:framePosition="0"
+                app:motionTarget="@+id/ivDetailsStars" />
+
+            <KeyAttribute
+                android:scaleX="1.0"
+                android:scaleY="1.0"
+                app:framePosition="10"
+                app:motionTarget="@+id/ivDetailsStars" />
+
+            <KeyAttribute
+                android:scaleX="15.0"
+                android:scaleY="15.0"
+                app:framePosition="0"
+                android:alpha="0"
+                app:motionTarget="@+id/ivDetailsForks" />
+
+            <KeyAttribute
+                android:scaleX="15.0"
+                android:scaleY="15.0"
+                app:framePosition="9"
+                android:alpha="0"
+                app:motionTarget="@+id/ivDetailsForks" />
+
+            <KeyAttribute
+                android:scaleX="15.0"
+                android:scaleY="15.0"
+                app:framePosition="10"
+                android:alpha="1"
+                app:motionTarget="@+id/ivDetailsForks" />
+
+            <KeyAttribute
+                android:scaleX="1.0"
+                android:scaleY="1.0"
+                app:framePosition="20"
+                app:motionTarget="@+id/ivDetailsForks" />
+
+            <KeyAttribute
+                android:scaleX="15.0"
+                android:scaleY="15.0"
+                android:alpha="0"
+                app:framePosition="0"
+                app:motionTarget="@+id/ivDetailsIssues" />
+
+            <KeyAttribute
+                android:scaleX="15.0"
+                android:scaleY="15.0"
+                android:alpha="0"
+                app:framePosition="19"
+                app:motionTarget="@+id/ivDetailsIssues" />
+
+            <KeyAttribute
+                android:scaleX="15.0"
+                android:scaleY="15.0"
+                android:alpha="1"
+                app:framePosition="20"
+                app:motionTarget="@+id/ivDetailsIssues" />
+
+            <KeyAttribute
+                android:scaleX="1.0"
+                android:scaleY="1.0"
+                app:framePosition="30"
+                app:motionTarget="@+id/ivDetailsIssues" />
+        </KeyFrameSet>
+    </Transition>
+
+    <ConstraintSet android:id="@+id/start">
+
+        <Constraint
+            android:id="@+id/txtDetailsRepoName"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <Constraint
+            android:id="@+id/txtDetailsLanguageLabel"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/txtDetailsRepoName" />
+
+        <Constraint
+            android:id="@+id/txtDetailsLanguage"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            app:layout_constraintStart_toEndOf="@+id/txtDetailsLanguageLabel"
+            app:layout_constraintTop_toTopOf="@+id/txtDetailsLanguageLabel" />
+
+        <Constraint
+            android:id="@+id/txtDetailsPublicLabel"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/txtDetailsLanguageLabel" />
+
+        <Constraint
+            android:id="@+id/txtDetailsPublic"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintStart_toStartOf="@+id/txtDetailsLanguage"
+            app:layout_constraintTop_toTopOf="@+id/txtDetailsPublicLabel" />
+
+        <Constraint
+            android:id="@+id/txtDetailsUserLabel"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/txtDetailsPublicLabel" />
+
+
+        <Constraint
+            android:id="@+id/txtDetailsOwner"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            app:layout_constraintStart_toStartOf="@+id/txtDetailsLanguage"
+            app:layout_constraintTop_toBottomOf="@+id/txtDetailsPublicLabel"/>
+
+        <Constraint
+            android:id="@+id/flDetailsStarsWrapper"
+            android:layout_width="@dimen/details_circle"
+            android:layout_height="@dimen/details_circle"
+            android:layout_marginStart="48dp"
+            android:layout_marginTop="48dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/txtDetailsOwner"/>
+
+        <Constraint
+            android:id="@+id/ivDetailsStars"
+            android:layout_width="@dimen/details_circle_icon"
+            android:layout_height="@dimen/details_circle_icon"
+            android:layout_gravity="center"
+            app:layout_constraintEnd_toEndOf="@+id/flDetailsStarsWrapper"
+            app:layout_constraintStart_toStartOf="@+id/flDetailsStarsWrapper"
+            app:layout_constraintTop_toTopOf="@+id/flDetailsStarsWrapper"
+            app:layout_constraintBottom_toBottomOf="@+id/flDetailsStarsWrapper"/>
+
+        <Constraint
+            android:id="@+id/txtDetailsStars"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginTop="6dp"
+            app:layout_constraintTop_toBottomOf="@+id/flDetailsStarsWrapper"
+            app:layout_constraintStart_toStartOf="@+id/flDetailsStarsWrapper"
+            app:layout_constraintEnd_toEndOf="@+id/flDetailsStarsWrapper" />
+
+        <Constraint
+            android:id="@+id/flDetailsForksWrapper"
+            android:layout_width="@dimen/details_circle"
+            android:layout_height="@dimen/details_circle"
+            android:layout_marginStart="48dp"
+            app:layout_constraintStart_toEndOf="@+id/flDetailsStarsWrapper"
+            app:layout_constraintTop_toTopOf="@+id/flDetailsStarsWrapper" />
+
+        <Constraint
+            android:id="@+id/ivDetailsForks"
+            android:layout_width="@dimen/details_circle_icon"
+            android:layout_height="@dimen/details_circle_icon"
+            android:layout_gravity="center"
+            app:layout_constraintBottom_toBottomOf="@+id/flDetailsForksWrapper"
+            app:layout_constraintEnd_toEndOf="@+id/flDetailsForksWrapper"
+            app:layout_constraintStart_toStartOf="@+id/flDetailsForksWrapper"
+            app:layout_constraintTop_toTopOf="@+id/flDetailsForksWrapper" />
+
+        <Constraint
+            android:id="@+id/txtDetailsForks"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginTop="6dp"
+            app:layout_constraintEnd_toEndOf="@+id/flDetailsForksWrapper"
+            app:layout_constraintStart_toStartOf="@+id/flDetailsForksWrapper"
+            app:layout_constraintTop_toBottomOf="@+id/flDetailsForksWrapper" />
+
+        <Constraint
+            android:id="@+id/flDetailsIssuesWrapper"
+            android:layout_width="@dimen/details_circle"
+            android:layout_height="@dimen/details_circle"
+            android:layout_marginStart="48dp"
+            app:layout_constraintStart_toEndOf="@+id/flDetailsForksWrapper"
+            app:layout_constraintTop_toTopOf="@+id/flDetailsForksWrapper" />
+
+        <Constraint
+            android:id="@+id/ivDetailsIssues"
+            android:layout_width="@dimen/details_circle_icon"
+            android:layout_height="@dimen/details_circle_icon"
+            android:layout_gravity="center"
+            android:padding="8dp"
+            app:layout_constraintBottom_toBottomOf="@+id/flDetailsIssuesWrapper"
+            app:layout_constraintEnd_toEndOf="@+id/flDetailsIssuesWrapper"
+            app:layout_constraintStart_toStartOf="@+id/flDetailsIssuesWrapper"
+            app:layout_constraintTop_toTopOf="@+id/flDetailsIssuesWrapper" />
+
+
+        <Constraint
+            android:id="@+id/txtDetailsIssues"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginTop="6dp"
+            app:layout_constraintEnd_toEndOf="@+id/flDetailsIssuesWrapper"
+            app:layout_constraintStart_toStartOf="@+id/flDetailsIssuesWrapper"
+            app:layout_constraintTop_toBottomOf="@+id/flDetailsForksWrapper" />
+
+        <Constraint
+            android:id="@+id/txtDetailsUrl"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="48dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/flDetailsStarsWrapper" />
+    </ConstraintSet>
+
+    <ConstraintSet android:id="@+id/end">
+        <Constraint
+            android:id="@+id/txtDetailsRepoName"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <Constraint
+            android:id="@+id/txtDetailsLanguageLabel"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/txtDetailsRepoName" />
+
+        <Constraint
+            android:id="@+id/txtDetailsLanguage"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            app:layout_constraintStart_toEndOf="@+id/txtDetailsLanguageLabel"
+            app:layout_constraintTop_toTopOf="@+id/txtDetailsLanguageLabel" />
+
+        <Constraint
+            android:id="@+id/txtDetailsPublicLabel"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/txtDetailsLanguageLabel" />
+
+        <Constraint
+            android:id="@+id/txtDetailsPublic"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintStart_toStartOf="@+id/txtDetailsLanguage"
+            app:layout_constraintTop_toTopOf="@+id/txtDetailsPublicLabel" />
+
+        <Constraint
+            android:id="@+id/txtDetailsUserLabel"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/txtDetailsPublicLabel" />
+
+
+        <Constraint
+            android:id="@+id/txtDetailsOwner"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            app:layout_constraintStart_toStartOf="@+id/txtDetailsLanguage"
+            app:layout_constraintTop_toBottomOf="@+id/txtDetailsPublicLabel"/>
+
+        <Constraint
+            android:id="@+id/flDetailsStarsWrapper"
+            android:layout_width="@dimen/details_circle"
+            android:layout_height="@dimen/details_circle"
+            android:layout_marginStart="48dp"
+            android:layout_marginTop="48dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/txtDetailsOwner"/>
+
+        <Constraint
+            android:id="@+id/ivDetailsStars"
+            android:layout_width="@dimen/details_circle_icon"
+            android:layout_height="@dimen/details_circle_icon"
+            app:layout_constraintEnd_toEndOf="@+id/flDetailsStarsWrapper"
+            app:layout_constraintStart_toStartOf="@+id/flDetailsStarsWrapper"
+            app:layout_constraintTop_toTopOf="@+id/flDetailsStarsWrapper"
+            app:layout_constraintBottom_toBottomOf="@+id/flDetailsStarsWrapper"/>
+
+        <Constraint
+            android:id="@+id/txtDetailsStars"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="6dp"
+            app:layout_constraintTop_toBottomOf="@+id/flDetailsStarsWrapper"
+            app:layout_constraintStart_toStartOf="@+id/flDetailsStarsWrapper"
+            app:layout_constraintEnd_toEndOf="@+id/flDetailsStarsWrapper" />
+
+        <Constraint
+            android:id="@+id/flDetailsForksWrapper"
+            android:layout_width="@dimen/details_circle"
+            android:layout_height="@dimen/details_circle"
+            android:layout_marginStart="48dp"
+            app:layout_constraintStart_toEndOf="@+id/flDetailsStarsWrapper"
+            app:layout_constraintTop_toTopOf="@+id/flDetailsStarsWrapper" />
+
+        <Constraint
+            android:id="@+id/ivDetailsForks"
+            android:layout_width="@dimen/details_circle_icon"
+            android:layout_height="@dimen/details_circle_icon"
+            app:layout_constraintBottom_toBottomOf="@+id/flDetailsForksWrapper"
+            app:layout_constraintEnd_toEndOf="@+id/flDetailsForksWrapper"
+            app:layout_constraintStart_toStartOf="@+id/flDetailsForksWrapper"
+            app:layout_constraintTop_toTopOf="@+id/flDetailsForksWrapper" />
+
+        <Constraint
+            android:id="@+id/txtDetailsForks"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="6dp"
+            app:layout_constraintEnd_toEndOf="@+id/flDetailsForksWrapper"
+            app:layout_constraintStart_toStartOf="@+id/flDetailsForksWrapper"
+            app:layout_constraintTop_toBottomOf="@+id/flDetailsForksWrapper" />
+
+        <Constraint
+            android:id="@+id/flDetailsIssuesWrapper"
+            android:layout_width="@dimen/details_circle"
+            android:layout_height="@dimen/details_circle"
+            android:layout_marginStart="48dp"
+            app:layout_constraintStart_toEndOf="@+id/flDetailsForksWrapper"
+            app:layout_constraintTop_toTopOf="@+id/flDetailsForksWrapper" />
+
+        <Constraint
+            android:id="@+id/ivDetailsIssues"
+            android:layout_width="@dimen/details_circle_icon"
+            android:layout_height="@dimen/details_circle_icon"
+            app:layout_constraintBottom_toBottomOf="@+id/flDetailsIssuesWrapper"
+            app:layout_constraintEnd_toEndOf="@+id/flDetailsIssuesWrapper"
+            app:layout_constraintStart_toStartOf="@+id/flDetailsIssuesWrapper"
+            app:layout_constraintTop_toTopOf="@+id/flDetailsIssuesWrapper" />
+
+
+        <Constraint
+            android:id="@+id/txtDetailsIssues"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="6dp"
+            app:layout_constraintEnd_toEndOf="@+id/flDetailsIssuesWrapper"
+            app:layout_constraintStart_toStartOf="@+id/flDetailsIssuesWrapper"
+            app:layout_constraintTop_toBottomOf="@+id/flDetailsForksWrapper" />
+
+        <Constraint
+            android:id="@+id/txtDetailsUrl"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="48dp"
+            app:layout_constraintTop_toBottomOf="@+id/flDetailsStarsWrapper" />
+    </ConstraintSet>
+</MotionScene>

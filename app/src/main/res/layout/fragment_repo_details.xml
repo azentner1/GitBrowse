@@ -1,217 +1,207 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.motion.widget.MotionLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/white"
+    android:background="@color/main_background"
     android:clickable="true"
-    android:focusable="true">
+    android:focusable="true"
+    android:padding="16dp"
+    app:layoutDescription="@xml/fragment_repo_details_scene">
 
-    <androidx.constraintlayout.widget.ConstraintLayout
+
+    <TextView
+        android:id="@+id/txtDetailsRepoName"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textColor="@color/black"
+        android:textSize="18sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:text="Repo Title" />
+
+    <TextView
+        android:id="@+id/txtDetailsLanguageLabel"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="24dp"
+        android:text="@string/language"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/txtDetailsRepoName" />
+
+    <TextView
+        android:id="@+id/txtDetailsLanguage"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:textColor="@color/black"
+        app:layout_constraintStart_toEndOf="@+id/txtDetailsLanguageLabel"
+        app:layout_constraintTop_toTopOf="@+id/txtDetailsLanguageLabel"
+        tools:text="Java" />
+
+    <TextView
+        android:id="@+id/txtDetailsPublicLabel"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:text="@string/public_text"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/txtDetailsLanguageLabel" />
+
+    <TextView
+        android:id="@+id/txtDetailsPublic"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintStart_toStartOf="@+id/txtDetailsLanguage"
+        app:layout_constraintTop_toTopOf="@+id/txtDetailsPublicLabel"
+        tools:text="Public"
+        tools:textColor="@color/red" />
+
+    <TextView
+        android:id="@+id/txtDetailsUserLabel"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:text="@string/owner"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/txtDetailsPublicLabel" />
+
+
+    <TextView
+        android:id="@+id/txtDetailsOwner"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        app:layout_constraintStart_toStartOf="@+id/txtDetailsLanguage"
+        app:layout_constraintTop_toBottomOf="@+id/txtDetailsPublicLabel"
+        tools:text="aviona" />
+
+    <FrameLayout
+        android:id="@+id/flDetailsStarsWrapper"
+        android:layout_width="@dimen/details_circle"
+        android:layout_height="@dimen/details_circle"
+        android:layout_marginStart="48dp"
+        android:layout_marginTop="48dp"
+        android:background="@drawable/ic_circle"
+        android:backgroundTint="@color/details_circle_background"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/txtDetailsOwner" />
+
+    <ImageView
+        android:id="@+id/ivDetailsStars"
+        android:layout_width="@dimen/details_circle_icon"
+        android:layout_height="@dimen/details_circle_icon"
+        android:layout_gravity="center"
+        android:src="@drawable/ic_star"
+        android:tint="@color/star"
+        app:layout_constraintBottom_toBottomOf="@+id/flDetailsStarsWrapper"
+        app:layout_constraintEnd_toEndOf="@+id/flDetailsStarsWrapper"
+        app:layout_constraintStart_toStartOf="@+id/flDetailsStarsWrapper"
+        app:layout_constraintTop_toTopOf="@+id/flDetailsStarsWrapper" />
+
+    <TextView
+        android:id="@+id/txtDetailsStars"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_marginTop="6dp"
+        android:textColor="@color/black"
+        android:textSize="16sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="@+id/flDetailsStarsWrapper"
+        app:layout_constraintStart_toStartOf="@+id/flDetailsStarsWrapper"
+        app:layout_constraintTop_toBottomOf="@+id/flDetailsStarsWrapper"
+        tools:text="200" />
+
+    <FrameLayout
+        android:id="@+id/flDetailsForksWrapper"
+        android:layout_width="@dimen/details_circle"
+        android:layout_height="@dimen/details_circle"
+        android:layout_marginStart="48dp"
+        android:background="@drawable/ic_circle"
+        android:backgroundTint="@color/details_circle_background"
+        app:layout_constraintStart_toEndOf="@+id/flDetailsStarsWrapper"
+        app:layout_constraintTop_toTopOf="@+id/flDetailsStarsWrapper" />
+
+
+    <ImageView
+        android:id="@+id/ivDetailsForks"
+        android:layout_width="@dimen/details_circle_icon"
+        android:layout_height="@dimen/details_circle_icon"
+        android:layout_gravity="center"
+        android:src="@drawable/ic_forkish"
+        android:tint="@color/forks"
+        app:layout_constraintBottom_toBottomOf="@+id/flDetailsForksWrapper"
+        app:layout_constraintEnd_toEndOf="@+id/flDetailsForksWrapper"
+        app:layout_constraintStart_toStartOf="@+id/flDetailsForksWrapper"
+        app:layout_constraintTop_toTopOf="@+id/flDetailsForksWrapper" />
+
+
+    <TextView
+        android:id="@+id/txtDetailsForks"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_marginTop="6dp"
+        android:textColor="@color/black"
+        android:textSize="16sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="@+id/flDetailsForksWrapper"
+        app:layout_constraintStart_toStartOf="@+id/flDetailsForksWrapper"
+        app:layout_constraintTop_toBottomOf="@+id/flDetailsForksWrapper"
+        tools:text="200" />
+
+    <FrameLayout
+        android:id="@+id/flDetailsIssuesWrapper"
+        android:layout_width="@dimen/details_circle"
+        android:layout_height="@dimen/details_circle"
+        android:layout_marginStart="48dp"
+        android:background="@drawable/ic_circle"
+        android:backgroundTint="@color/details_circle_background"
+        app:layout_constraintStart_toEndOf="@+id/flDetailsForksWrapper"
+        app:layout_constraintTop_toTopOf="@+id/flDetailsForksWrapper" />
+
+    <ImageView
+        android:id="@+id/ivDetailsIssues"
+        android:layout_width="@dimen/details_circle_icon"
+        android:layout_height="@dimen/details_circle_icon"
+        android:layout_gravity="center"
+        android:padding="8dp"
+        android:src="@drawable/ic_issues"
+        android:tint="@color/issues"
+        app:layout_constraintBottom_toBottomOf="@+id/flDetailsIssuesWrapper"
+        app:layout_constraintEnd_toEndOf="@+id/flDetailsIssuesWrapper"
+        app:layout_constraintStart_toStartOf="@+id/flDetailsIssuesWrapper"
+        app:layout_constraintTop_toTopOf="@+id/flDetailsIssuesWrapper" />
+
+
+    <TextView
+        android:id="@+id/txtDetailsIssues"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_marginTop="6dp"
+        android:textColor="@color/black"
+        android:textSize="16sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="@+id/flDetailsIssuesWrapper"
+        app:layout_constraintStart_toStartOf="@+id/flDetailsIssuesWrapper"
+        app:layout_constraintTop_toBottomOf="@+id/flDetailsForksWrapper"
+        tools:text="200" />
+
+    <TextView
+        android:id="@+id/txtDetailsUrl"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:background="@color/main_background"
-        android:padding="16dp">
-
-        <TextView
-            android:id="@+id/txtDetailsRepoName"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:textColor="@color/black"
-            android:textSize="18sp"
-            android:textStyle="bold"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            tools:text="Repo Title" />
-
-        <TextView
-            android:id="@+id/txtDetailsLanguageLabel"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="24dp"
-            android:text="@string/language"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/txtDetailsRepoName" />
-
-        <TextView
-            android:id="@+id/txtDetailsLanguage"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="16dp"
-            android:textColor="@color/black"
-            app:layout_constraintStart_toEndOf="@+id/txtDetailsLanguageLabel"
-            app:layout_constraintTop_toTopOf="@+id/txtDetailsLanguageLabel"
-            tools:text="Java" />
-
-        <TextView
-            android:id="@+id/txtDetailsPublicLabel"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="8dp"
-            android:text="@string/public_text"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/txtDetailsLanguageLabel" />
-
-        <TextView
-            android:id="@+id/txtDetailsPublic"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            app:layout_constraintStart_toStartOf="@+id/txtDetailsLanguage"
-            app:layout_constraintTop_toTopOf="@+id/txtDetailsPublicLabel"
-            tools:text="Public"
-            tools:textColor="@color/red" />
-
-        <TextView
-            android:id="@+id/txtDetailsUserLabel"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="8dp"
-            android:text="@string/owner"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/txtDetailsPublicLabel" />
+        android:layout_height="wrap_content"
+        android:layout_marginTop="48dp"
+        android:background="?selectableItemBackground"
+        android:gravity="center"
+        android:textSize="16sp"
+        app:layout_constraintTop_toBottomOf="@+id/flDetailsStarsWrapper"
+        tools:text="https://www.something.com" />
 
 
-        <TextView
-            android:id="@+id/txtDetailsOwner"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="8dp"
-            app:layout_constraintStart_toStartOf="@+id/txtDetailsLanguage"
-            app:layout_constraintTop_toBottomOf="@+id/txtDetailsPublicLabel"
-            tools:text="aviona" />
-
-        <LinearLayout
-            android:id="@+id/llDetailsCirclesWrapper"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="48dp"
-            android:gravity="center"
-            android:orientation="horizontal"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/txtDetailsOwner">
-
-            <LinearLayout
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:orientation="vertical">
-
-                <FrameLayout
-                    android:id="@+id/flDetailsStarsWrapper"
-                    android:layout_width="@dimen/details_circle"
-                    android:layout_height="@dimen/details_circle"
-                    android:background="@drawable/ic_circle"
-                    android:backgroundTint="@color/details_circle_background">
-
-                    <ImageView
-                        android:id="@+id/ivDetailsStars"
-                        android:layout_width="@dimen/details_circle_icon"
-                        android:layout_height="@dimen/details_circle_icon"
-                        android:layout_gravity="center"
-                        android:src="@drawable/ic_star"
-                        android:tint="@color/star" />
-
-                </FrameLayout>
-
-                <TextView
-                    android:id="@+id/txtDetailsStars"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_gravity="center"
-                    android:layout_marginTop="6dp"
-                    android:textColor="@color/black"
-                    android:textSize="16sp"
-                    android:textStyle="bold"
-                    tools:text="200" />
-
-            </LinearLayout>
-
-            <LinearLayout
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="32dp"
-                android:orientation="vertical">
-
-                <FrameLayout
-                    android:id="@+id/flDetailsForksWrapper"
-                    android:layout_width="@dimen/details_circle"
-                    android:layout_height="@dimen/details_circle"
-                    android:background="@drawable/ic_circle"
-                    android:backgroundTint="@color/details_circle_background">
-
-                    <ImageView
-                        android:id="@+id/ivDetailsForks"
-                        android:layout_width="@dimen/details_circle_icon"
-                        android:layout_height="@dimen/details_circle_icon"
-                        android:layout_gravity="center"
-                        android:src="@drawable/ic_forkish"
-                        android:tint="@color/forks" />
-                </FrameLayout>
-
-                <TextView
-                    android:id="@+id/txtDetailsForks"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_gravity="center"
-                    android:layout_marginTop="6dp"
-                    android:textColor="@color/black"
-                    android:textSize="16sp"
-                    android:textStyle="bold"
-                    tools:text="200" />
-            </LinearLayout>
-
-            <LinearLayout
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="32dp"
-                android:orientation="vertical">
-
-                <FrameLayout
-                    android:id="@+id/flDetailsIssuesWrapper"
-                    android:layout_width="@dimen/details_circle"
-                    android:layout_height="@dimen/details_circle"
-                    android:background="@drawable/ic_circle"
-                    android:backgroundTint="@color/details_circle_background">
-
-                    <ImageView
-                        android:id="@+id/ivDetailsIssues"
-                        android:layout_width="@dimen/details_circle_icon"
-                        android:layout_height="@dimen/details_circle_icon"
-                        android:layout_gravity="center"
-                        android:padding="8dp"
-                        android:src="@drawable/ic_issues"
-                        android:tint="@color/issues" />
-                </FrameLayout>
-
-                <TextView
-                    android:id="@+id/txtDetailsIssues"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_gravity="center"
-                    android:layout_marginTop="6dp"
-                    android:textColor="@color/black"
-                    android:textSize="16sp"
-                    android:textStyle="bold"
-                    tools:text="200" />
-
-            </LinearLayout>
-
-        </LinearLayout>
-
-        <TextView
-            android:id="@+id/txtDetailsUrl"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="48dp"
-            android:background="?selectableItemBackground"
-            android:gravity="center"
-            android:textSize="16sp"
-            app:layout_constraintTop_toBottomOf="@+id/llDetailsCirclesWrapper"
-            tools:text="https://www.something.com" />
-
-
-    </androidx.constraintlayout.widget.ConstraintLayout>
-
-</LinearLayout>
+</androidx.constraintlayout.motion.widget.MotionLayout>

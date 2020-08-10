@@ -10,6 +10,7 @@ import android.view.MenuItem
 import android.view.View
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.content.res.ResourcesCompat
+import androidx.core.view.isVisible
 import androidx.lifecycle.Observer
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.demo.gitbrowse.BuildConfig
@@ -42,11 +43,6 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
         setRepoObserver()
-//        if(!mainActivityViewModel.isUserLoggedIn()) {
-//            authorizeUser()
-//        } else {
-//           mainActivityViewModel.fetchRepos()
-//        }
         mainActivityViewModel.fetchRepos()
         llLoadingIndicator.visibility = View.VISIBLE
         initUi()
@@ -112,6 +108,12 @@ class MainActivity : AppCompatActivity() {
             }
 
         })
+
+        supportFragmentManager.addOnBackStackChangedListener {
+            if (supportFragmentManager.backStackEntryCount == 0) {
+                flFragmentHolder.isVisible = false
+            }
+        }
     }
 
     private fun authorizeUser() {
@@ -145,6 +147,7 @@ class MainActivity : AppCompatActivity() {
     }
 
     private fun showRepoDetails(repo: Repo) {
+        flFragmentHolder.isVisible = true
         supportFragmentManager.beginTransaction()
             .add(R.id.flFragmentHolder, RepoDetailFragment.newInstance(repo)).addToBackStack(null)
             .commit()
